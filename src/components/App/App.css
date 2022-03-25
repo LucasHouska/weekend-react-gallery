@@ -13,3 +13,12 @@
   font-size: 1.5em;
 }
 
+.box {
+  margin: 25px;
+  display: inline-block;
+  flex-flow: row;
+  height: 150px;
+  width: 150px;
+  background-color: aquamarine;
+}
+
