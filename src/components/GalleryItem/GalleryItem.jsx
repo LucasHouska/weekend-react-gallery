@@ -6,19 +6,29 @@ function GalleryItem(props) {
     const showHide = () => {
         setPictureDescription(!pictureDescription)
     }
+
+    const addALike = () => {
+        props.updateGallery(props.pic.id)
+    }
     return (
         <>
-            <div className="box">
+            <div>
                 {pictureDescription ?
-                    <img
-                        onClick={showHide}
-                        src={props.pic.path}
-                        alt={props.pic.description} /> :
-                        <p onClick={showHide}>
-                        {props.pic.description}
-                        </p>
-                }
+                    <div className="box">
+                        <img
+                            onClick={showHide}
+                            src={props.pic.path}
+                            alt={props.pic.description} />
+                    </div> :
+                    <div className='box' onClick={showHide}>
+                        <p>{props.pic.description}</p>
 
+                    </div>
+                }
+                <div>
+                    <button onClick={addALike}>Love this!</button>
+                    <p>{props.pic.likes} people like this 😏</p>
+                </div>
             </div>
         </>
     )

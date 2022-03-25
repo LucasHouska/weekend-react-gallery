@@ -7,6 +7,7 @@ function GalleryList(props) {
                 <GallaryItem 
                 key={pic.id}
                 pic={pic}
+                updateGallery={props.updateGallery}
                 />)}
         </>
     )

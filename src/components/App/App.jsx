@@ -17,6 +17,17 @@ function App() {
     })
   }
 
+  const updateGallery = (picId) => {
+    console.log('Liked', picId)
+    axios.put(`/gallery/like/${picId}`)
+    .then(response => {
+      console.log('Updated...');
+      getGallery();
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
   useEffect(() => {
     getGallery();
   }, [])
@@ -27,6 +38,7 @@ function App() {
         </header>
         <GalleryList 
         galleryList={galleryList}
+        updateGallery={updateGallery}
         />
         <img src="images/goat_small.jpg"/>
       </div>
