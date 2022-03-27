@@ -49,4 +49,8 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+router.post('/', (req, res) => {
+    
+})
+
 module.exports = router;
